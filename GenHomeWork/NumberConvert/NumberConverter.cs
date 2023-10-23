@@ -1,30 +1,10 @@
-﻿using Microsoft.Office.Interop.Word;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GenHomeWork.NumberConvert
 {
     public static class NumberConverter
     {
-        private static int CharToDigit(char c)
-        {
-            if (char.IsDigit(c))
-            {
-                return c - '0';
-            }
-            else if (char.IsLetter(c))
-            {
-                return char.ToUpper(c) - 'A' + 10;
-            }
-            else
-            {
-                throw new ArgumentException("Недопустимый символ в числе.");
-            }
-        }
-
         private static char DigitToChar(int digit)
         {
             if (digit >= 0 && digit <= 9)
@@ -45,30 +25,71 @@ namespace GenHomeWork.NumberConvert
         {
             try
             {
-                int decimalNumber = 0;
-                int power = 1;
+                double decimalNumber = 0;
+                bool hasFractionalPart = false;
 
-                // Переводим число из исходной системы в десятичную
-                for (int i = number.Length - 1; i >= 0; i--)
+                for (int i = 0; i < number.Length; i++)
                 {
-                    decimalNumber += CharToDigit(number[i]) * power;
-                    power *= baseFrom;
+                    char c = number[i];
+
+                    if (char.IsDigit(c))
+                    {
+                        decimalNumber = decimalNumber * baseFrom + char.GetNumericValue(c);
+                        if (hasFractionalPart)
+                        {
+                            hasFractionalPart = false;
+                        }
+                    }
+                    else if (c == '.')
+                    {
+                        hasFractionalPart = true;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Недопустимый символ в числе.");
+                    }
                 }
 
-                // Переводим число из десятичной системы в целевую
-                StringBuilder result = new StringBuilder();
-                while (decimalNumber > 0)
+                if (hasFractionalPart)
                 {
-                    int remainder = decimalNumber % baseTo;
+                    throw new ArgumentException("Недопустимая десятичная точка в числе.");
+                }
+
+                StringBuilder result = new StringBuilder();
+
+                int integerPart = (int)decimalNumber;
+                double fractionalPart = decimalNumber - integerPart;
+
+                while (integerPart > 0)
+                {
+                    int remainder = integerPart % baseTo;
                     result.Insert(0, DigitToChar(remainder));
-                    decimalNumber /= baseTo;
+                    integerPart /= baseTo;
+                }
+
+                if (result.Length == 0)
+                {
+                    result.Append('0');
+                }
+
+                if (fractionalPart > 0)
+                {
+                    result.Append('.');
+
+                    for (int i = 0; i < 10; i++) // Limit the number of decimal places to 10
+                    {
+                        fractionalPart *= baseTo;
+                        int intPart = (int)fractionalPart;
+                        result.Append(DigitToChar(intPart));
+                        fractionalPart -= intPart;
+                    }
                 }
 
                 return result.ToString();
             }
-            catch (ArgumentException)
+            catch (ArgumentException ex)
             {
-                return "Ошибка: недопустимые символы в числе или недопустимая система счисления";
+                return "Ошибка: " + ex.Message;
             }
         }
     }

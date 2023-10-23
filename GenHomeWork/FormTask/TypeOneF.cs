@@ -23,6 +23,11 @@ namespace GenHomeWork.FormTask
         public TypeOneF()
         {
             InitializeComponent();
+
+            rbtnDouble.CheckedChanged += rbtn_SelectedIntOrDouble;
+            rbtnInt.CheckedChanged += rbtn_SelectedIntOrDouble;
+            panelDouble.Visible = false;
+            panelInt.Visible = false;
         }
 
         #region Оработка смены значения
@@ -57,6 +62,23 @@ namespace GenHomeWork.FormTask
         }
         #endregion
 
+        private void rbtn_SelectedIntOrDouble(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+
+            if (radioButton.Checked && radioButton.Name == "rbtnDouble")
+            {
+                panelInt.Visible = false;
+                panelDouble.Visible = true;
+                panelDouble.Location = new Point(panelInt.Location.X, panelInt.Location.Y);
+            }
+            else if (radioButton.Checked && radioButton.Name == "rbtnInt")
+            {
+                panelInt.Visible = true;
+                panelDouble.Visible = false;
+            }
+        }
+
         private void btnAddTask_Click(object sender, EventArgs e)
         {
             countTask = (int)nudCount.Value;
@@ -73,6 +95,9 @@ namespace GenHomeWork.FormTask
                 numberSysteEnd2 = numSys3,
             };
             TemplateManager.AddTask(task);
+
+            MessageBox.Show("Задачи были добавлены.\nПосле добавленя последний задачи, пожалуйста, создайте " +
+                "шаблон!\nНеобходимо указаать его имя(оно должно быть уникальным) и нажать соответствующую кнопку");
         }
     }
 }

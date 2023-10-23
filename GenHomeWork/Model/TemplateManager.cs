@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,12 +25,40 @@ namespace GenHomeWork.Model
         /// Основной лист шаблонов(при выгрузки к нему добавляются новые)
         /// </summary>
         private static List<Template> templates = new List<Template>();
+
+        /// <summary>
+        /// Храним уже готовые задачи
+        /// </summary>
+        public static List<string> tasks;
+        /// <summary>
+        /// Храним решение к задачкам
+        /// </summary>
+        public static List<string> solution;
         
         public static List<Template> Templates { get {  return templates; } }
 
         public static void AddTask(TaskBase task)
         {
             tasksStatic.Add(task);
+        }
+
+        public static void AddTaskAndSolutionInResultList(List<string> taskStr, List<string> solutionStr)
+        {
+            foreach (var task in taskStr)
+            {
+                tasks.Add(task);
+            }
+
+            foreach (var sol in solutionStr)
+            {
+                solution.Add(sol);
+            }
+        }
+
+        public static void PrintToFile(string filePath, string title)
+        {
+            SaveToFile.SaveToWordFile(filePath, title, tasks);
+            SaveToFile.SaveToWordFile(filePath, title, solution);
         }
 
         public static Template CreateTemplate(string name)
@@ -66,7 +95,7 @@ namespace GenHomeWork.Model
                         if (task.Type == "TaskOne")
                         {
                             var one = (CurrentTaskOne)task;
-                            one.GenerateAndSaveTasks(pathQuest, pathSolution);
+                            one.GenerateAndSaveTasks();
                         }
                     }
                 }

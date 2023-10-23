@@ -90,6 +90,7 @@
     <Compile Include="Model\Template.cs" />
     <Compile Include="Model\TemplateManager.cs" />
     <Compile Include="NumberConvert\NumberConverter.cs" />
+    <Compile Include="SaveToFile.cs" />
     <Compile Include="SForm.cs">
       <SubType>Form</SubType>
     </Compile>

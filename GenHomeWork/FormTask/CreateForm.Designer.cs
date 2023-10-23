@@ -34,8 +34,8 @@
             this.selectType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
+            this.lblNamePattern = new System.Windows.Forms.Label();
+            this.tbNamePattern = new System.Windows.Forms.TextBox();
             this.btnCreatePattern = new FontAwesome.Sharp.IconButton();
             this.panelUp.SuspendLayout();
             this.SuspendLayout();
@@ -105,23 +105,23 @@
             this.panelDesktop.Size = new System.Drawing.Size(598, 281);
             this.panelDesktop.TabIndex = 4;
             // 
-            // label2
+            // lblNamePattern
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(243, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Назовите шаблон";
+            this.lblNamePattern.AutoSize = true;
+            this.lblNamePattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblNamePattern.ForeColor = System.Drawing.Color.White;
+            this.lblNamePattern.Location = new System.Drawing.Point(287, 44);
+            this.lblNamePattern.Name = "lblNamePattern";
+            this.lblNamePattern.Size = new System.Drawing.Size(112, 13);
+            this.lblNamePattern.TabIndex = 3;
+            this.lblNamePattern.Text = "Назовите шаблон";
             // 
-            // tbName
+            // tbNamePattern
             // 
-            this.tbName.Location = new System.Drawing.Point(246, 61);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(149, 20);
-            this.tbName.TabIndex = 5;
+            this.tbNamePattern.Location = new System.Drawing.Point(290, 61);
+            this.tbNamePattern.Name = "tbNamePattern";
+            this.tbNamePattern.Size = new System.Drawing.Size(149, 20);
+            this.tbNamePattern.TabIndex = 5;
             // 
             // btnCreatePattern
             // 
@@ -135,7 +135,7 @@
             this.btnCreatePattern.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCreatePattern.IconSize = 30;
             this.btnCreatePattern.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreatePattern.Location = new System.Drawing.Point(492, 58);
+            this.btnCreatePattern.Location = new System.Drawing.Point(492, 59);
             this.btnCreatePattern.Name = "btnCreatePattern";
             this.btnCreatePattern.Size = new System.Drawing.Size(118, 23);
             this.btnCreatePattern.TabIndex = 9;
@@ -151,9 +151,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(104)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(622, 401);
             this.Controls.Add(this.btnCreatePattern);
-            this.Controls.Add(this.tbName);
+            this.Controls.Add(this.tbNamePattern);
             this.Controls.Add(this.panelDesktop);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNamePattern);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectType);
             this.Controls.Add(this.panel1);
@@ -174,8 +174,8 @@
         private System.Windows.Forms.ComboBox selectType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelDesktop;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Label lblNamePattern;
+        private System.Windows.Forms.TextBox tbNamePattern;
         private FontAwesome.Sharp.IconButton btnCreatePattern;
         private FontAwesome.Sharp.IconButton btnExit;
     }

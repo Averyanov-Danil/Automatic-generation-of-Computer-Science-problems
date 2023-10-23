@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,14 +63,19 @@ namespace GenHomeWork
 
         private void btnCreatePattern_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(tbName.Text))
+            if (!String.IsNullOrEmpty(tbNamePattern.Text))
             {
-                Template template = TemplateManager.CreateTemplate(tbName.Text);
+                Template template = TemplateManager.CreateTemplate(tbNamePattern.Text);
             }
             else
             {
                 MessageBox.Show("Заполните название шаблона плиз");
             }
+        }
+
+        public static void VisabilityCreatePatternElements()
+        {
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
