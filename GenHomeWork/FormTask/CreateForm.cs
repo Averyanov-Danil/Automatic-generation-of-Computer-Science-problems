@@ -1,15 +1,8 @@
-﻿using GenHomeWork.FormTask;
+﻿using FontAwesome.Sharp;
+using GenHomeWork.FormTask;
 using GenHomeWork.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GenHomeWork
@@ -21,6 +14,11 @@ namespace GenHomeWork
         public CreateForm()
         {
             InitializeComponent();
+
+            lblNamePattern.Visible = false;
+            tbNamePattern.Visible = false;
+            btnCreatePattern.Visible = false;
+
         }
 
         private void OpenChildForm(Form childForm)
@@ -57,8 +55,13 @@ namespace GenHomeWork
         {
             if (selectType.SelectedItem.ToString() == "Тип №1")
             {
-                OpenChildForm(new TypeOneF());
+                OpenChildForm(new TypeOneF(this));
             }
+            else if (selectType.SelectedItem.ToString() == "Тип №2")
+            {
+                OpenChildForm(new Type3F(this));
+            }
+
         }
 
         private void btnCreatePattern_Click(object sender, EventArgs e)
@@ -66,6 +69,11 @@ namespace GenHomeWork
             if (!String.IsNullOrEmpty(tbNamePattern.Text))
             {
                 Template template = TemplateManager.CreateTemplate(tbNamePattern.Text);
+                DialogResult result = MessageBox.Show("Шаблон был успешно добавлен\nЗакрыт данную форму?", "Шаблон добавлен", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -73,16 +81,16 @@ namespace GenHomeWork
             }
         }
 
-        public static void VisabilityCreatePatternElements()
+        public void VisabilityCreatePatternElements(Label lblName, TextBox textBox, IconButton button)
         {
-            
+            lblName.Visible = true;
+            textBox.Visible = true;
+            button.Visible = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            SForm sForm = new SForm();
-            sForm.Show();
         }
     }
 }

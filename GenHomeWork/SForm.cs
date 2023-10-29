@@ -35,7 +35,6 @@ namespace GenHomeWork
         private void btn_createPattern_Click(object sender, EventArgs e)
         {
            var form = new CreateForm();
-            this.Hide();
             form.Show();
         }
 
@@ -43,7 +42,13 @@ namespace GenHomeWork
         {
             var form = new LoadForm();
             this.Hide();
-            form.Show();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

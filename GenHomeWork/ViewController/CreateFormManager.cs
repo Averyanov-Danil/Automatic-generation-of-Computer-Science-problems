@@ -19,12 +19,13 @@ namespace GenHomeWork.ViewController
         {
             grid = gridTemplate;
             template = templates;
-            FillGrid();
+            FillGrid(template);
         }
 
-        private static void FillGrid()
+        public static void FillGrid(List<Model.Template> templates)
         {
-            foreach (var template in template) 
+            grid.Rows.Clear();
+            foreach (var template in templates) 
             {
                 int rowIndex = grid.Rows.Add();
                 grid.Rows[rowIndex].Cells["name"].Value = template.Name;

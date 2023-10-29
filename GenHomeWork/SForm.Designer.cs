@@ -32,6 +32,7 @@
             this.btn_createPattern = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPatternCount = new System.Windows.Forms.Label();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // btn_loadPattern
@@ -69,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(265, 9);
+            this.label1.Location = new System.Drawing.Point(12, 173);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 6;
@@ -80,11 +81,26 @@
             this.lblPatternCount.AutoSize = true;
             this.lblPatternCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPatternCount.ForeColor = System.Drawing.Color.White;
-            this.lblPatternCount.Location = new System.Drawing.Point(384, 9);
+            this.lblPatternCount.Location = new System.Drawing.Point(131, 173);
             this.lblPatternCount.Name = "lblPatternCount";
             this.lblPatternCount.Size = new System.Drawing.Size(14, 13);
             this.lblPatternCount.TabIndex = 6;
             this.lblPatternCount.Text = "0";
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 20;
+            this.btnExit.Location = new System.Drawing.Point(389, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(20, 20);
+            this.btnExit.TabIndex = 13;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // SForm
             // 
@@ -92,6 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(104)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(412, 195);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblPatternCount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_createPattern);
@@ -111,6 +128,7 @@
         private System.Windows.Forms.Button btn_createPattern;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPatternCount;
+        private FontAwesome.Sharp.IconButton btnExit;
     }
 }
 

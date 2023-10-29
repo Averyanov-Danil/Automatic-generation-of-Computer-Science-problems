@@ -67,6 +67,12 @@
     <Compile Include="FormTask\CreateForm.Designer.cs">
       <DependentUpon>CreateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTask\Type3F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTask\Type3F.Designer.cs">
+      <DependentUpon>Type3F.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTask\TypeOneF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,8 +91,10 @@
     <Compile Include="LoadForm.Designer.cs">
       <DependentUpon>LoadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CurrentTask3.cs" />
+    <Compile Include="Model\CurrentTask2.cs" />
     <Compile Include="Model\TaskBase.cs" />
-    <Compile Include="Model\CurrentTaskOne.cs" />
+    <Compile Include="Model\CurrentTask1.cs" />
     <Compile Include="Model\Template.cs" />
     <Compile Include="Model\TemplateManager.cs" />
     <Compile Include="NumberConvert\NumberConverter.cs" />
@@ -102,6 +110,9 @@
     <Compile Include="ViewController\CreateFormManager.cs" />
     <EmbeddedResource Include="FormTask\CreateForm.resx">
       <DependentUpon>CreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTask\Type3F.resx">
+      <DependentUpon>Type3F.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTask\TypeOneF.resx">
       <DependentUpon>TypeOneF.cs</DependentUpon>

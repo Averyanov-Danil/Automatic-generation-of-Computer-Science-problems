@@ -10,7 +10,7 @@ using System.IO;
 namespace GenHomeWork.Model
 {
     [Serializable]
-    internal class CurrentTaskOne : TaskBase
+    internal class CurrentTask1 : TaskBase
     {
         public int numberSystemBase;
         public int numberSysteEnd1;
@@ -35,7 +35,12 @@ namespace GenHomeWork.Model
             {
                 int number = random.Next(numberFrom, numberTo + 1);
                 int baseFrom = numberSystemBase;
-                int baseTo = random.Next(numberSysteEnd1, numberSysteEnd2 + 1);
+                int baseTo;
+
+                do
+                {
+                    baseTo = random.Next(numberSysteEnd1, numberSysteEnd2 + 1);
+                } while (baseTo == baseFrom);
 
                 // Генерация задачи
                 string taskText = $"{i + 1}. Перевести {number} из {baseFrom}-ой системы счисления в {baseTo}-ую систему счисления.";

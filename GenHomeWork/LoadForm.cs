@@ -45,13 +45,12 @@ namespace GenHomeWork
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            this.Close();
         }
 
         private void gridTemplates_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Where where = new Where();
-            where.ShowDialog();
+            
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 // Вытаскивает название нажатой кнопки
@@ -62,8 +61,16 @@ namespace GenHomeWork
                 if (columnName == "print")
                 {
                     string name = row.Cells["name"].Value.ToString();
+                    Where where = new Where();
+                    where.ShowDialog();
 
                     TemplateManager.SelectTemplate(name, pathQuest, pathSolution);
+                }
+                else if (columnName == "delete")
+                {
+                    string name = row.Cells["name"].Value.ToString();
+
+                    TemplateManager.DeleteTemplate(name);
                 }
             }
         }

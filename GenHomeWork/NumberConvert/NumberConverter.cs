@@ -25,35 +25,8 @@ namespace GenHomeWork.NumberConvert
         {
             try
             {
-                double decimalNumber = 0;
-                bool hasFractionalPart = false;
-
-                for (int i = 0; i < number.Length; i++)
-                {
-                    char c = number[i];
-
-                    if (char.IsDigit(c))
-                    {
-                        decimalNumber = decimalNumber * baseFrom + char.GetNumericValue(c);
-                        if (hasFractionalPart)
-                        {
-                            hasFractionalPart = false;
-                        }
-                    }
-                    else if (c == '.')
-                    {
-                        hasFractionalPart = true;
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Недопустимый символ в числе.");
-                    }
-                }
-
-                if (hasFractionalPart)
-                {
-                    throw new ArgumentException("Недопустимая десятичная точка в числе.");
-                }
+                // Парсим число с учетом текущей локали
+                double decimalNumber = double.Parse(number);
 
                 StringBuilder result = new StringBuilder();
 
@@ -74,7 +47,7 @@ namespace GenHomeWork.NumberConvert
 
                 if (fractionalPart > 0)
                 {
-                    result.Append('.');
+                    result.Append(',');
 
                     for (int i = 0; i < 10; i++) // Limit the number of decimal places to 10
                     {
@@ -86,6 +59,10 @@ namespace GenHomeWork.NumberConvert
                 }
 
                 return result.ToString();
+            }
+            catch (FormatException)
+            {
+                return "Ошибка: Недопустимый формат числа.";
             }
             catch (ArgumentException ex)
             {

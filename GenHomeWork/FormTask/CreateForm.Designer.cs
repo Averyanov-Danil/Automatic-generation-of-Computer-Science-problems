@@ -47,7 +47,7 @@
             this.panelUp.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUp.Location = new System.Drawing.Point(0, 0);
             this.panelUp.Name = "panelUp";
-            this.panelUp.Size = new System.Drawing.Size(622, 29);
+            this.panelUp.Size = new System.Drawing.Size(724, 29);
             this.panelUp.TabIndex = 0;
             this.panelUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
             // 
@@ -59,7 +59,7 @@
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 20;
-            this.btnExit.Location = new System.Drawing.Point(602, 0);
+            this.btnExit.Location = new System.Drawing.Point(701, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(20, 20);
             this.btnExit.TabIndex = 11;
@@ -72,7 +72,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(622, 5);
+            this.panel1.Size = new System.Drawing.Size(724, 5);
             this.panel1.TabIndex = 1;
             // 
             // selectType
@@ -102,7 +102,7 @@
             // 
             this.panelDesktop.Location = new System.Drawing.Point(12, 108);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(598, 281);
+            this.panelDesktop.Size = new System.Drawing.Size(700, 278);
             this.panelDesktop.TabIndex = 4;
             // 
             // lblNamePattern
@@ -110,7 +110,7 @@
             this.lblNamePattern.AutoSize = true;
             this.lblNamePattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNamePattern.ForeColor = System.Drawing.Color.White;
-            this.lblNamePattern.Location = new System.Drawing.Point(287, 44);
+            this.lblNamePattern.Location = new System.Drawing.Point(516, 45);
             this.lblNamePattern.Name = "lblNamePattern";
             this.lblNamePattern.Size = new System.Drawing.Size(112, 13);
             this.lblNamePattern.TabIndex = 3;
@@ -118,7 +118,7 @@
             // 
             // tbNamePattern
             // 
-            this.tbNamePattern.Location = new System.Drawing.Point(290, 61);
+            this.tbNamePattern.Location = new System.Drawing.Point(519, 62);
             this.tbNamePattern.Name = "tbNamePattern";
             this.tbNamePattern.Size = new System.Drawing.Size(149, 20);
             this.tbNamePattern.TabIndex = 5;
@@ -135,11 +135,10 @@
             this.btnCreatePattern.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCreatePattern.IconSize = 30;
             this.btnCreatePattern.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreatePattern.Location = new System.Drawing.Point(492, 59);
+            this.btnCreatePattern.Location = new System.Drawing.Point(677, 62);
             this.btnCreatePattern.Name = "btnCreatePattern";
-            this.btnCreatePattern.Size = new System.Drawing.Size(118, 23);
+            this.btnCreatePattern.Size = new System.Drawing.Size(35, 23);
             this.btnCreatePattern.TabIndex = 9;
-            this.btnCreatePattern.Text = "Создать";
             this.btnCreatePattern.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreatePattern.UseVisualStyleBackColor = true;
             this.btnCreatePattern.Click += new System.EventHandler(this.btnCreatePattern_Click);
@@ -149,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(104)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(622, 401);
+            this.ClientSize = new System.Drawing.Size(724, 399);
             this.Controls.Add(this.btnCreatePattern);
             this.Controls.Add(this.tbNamePattern);
             this.Controls.Add(this.panelDesktop);
@@ -160,6 +159,7 @@
             this.Controls.Add(this.panelUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CreateForm";
             this.panelUp.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -174,9 +174,9 @@
         private System.Windows.Forms.ComboBox selectType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelDesktop;
-        private System.Windows.Forms.Label lblNamePattern;
-        private System.Windows.Forms.TextBox tbNamePattern;
-        private FontAwesome.Sharp.IconButton btnCreatePattern;
         private FontAwesome.Sharp.IconButton btnExit;
+        public System.Windows.Forms.Label lblNamePattern;
+        public System.Windows.Forms.TextBox tbNamePattern;
+        public FontAwesome.Sharp.IconButton btnCreatePattern;
     }
 }

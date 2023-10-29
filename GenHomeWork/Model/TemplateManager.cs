@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using GenHomeWork.ViewController;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.TextFormatting;
 
 namespace GenHomeWork.Model
 {
@@ -33,7 +35,7 @@ namespace GenHomeWork.Model
         /// <summary>
         /// Храним решение к задачкам
         /// </summary>
-        public static List<string> solution;
+        public static List<string> solution;   
         
         public static List<Template> Templates { get {  return templates; } }
 
@@ -44,6 +46,12 @@ namespace GenHomeWork.Model
 
         public static void AddTaskAndSolutionInResultList(List<string> taskStr, List<string> solutionStr)
         {
+            if (tasks == null || solution == null)
+            {
+                tasks = new List<string>();
+                solution = new List<string>();
+            }
+
             foreach (var task in taskStr)
             {
                 tasks.Add(task);
@@ -57,8 +65,10 @@ namespace GenHomeWork.Model
 
         public static void PrintToFile(string filePath, string title)
         {
-            SaveToFile.SaveToWordFile(filePath, title, tasks);
-            SaveToFile.SaveToWordFile(filePath, title, solution);
+            SaveToFile.SaveToWordFile(filePath + $" {title} Задачи.docx", title, tasks);
+            SaveToFile.SaveToWordFile(filePath + $" {title} Решение.docx", title, solution);
+            tasks.Clear();
+            solution.Clear();
         }
 
         public static Template CreateTemplate(string name)
@@ -84,6 +94,20 @@ namespace GenHomeWork.Model
             File.WriteAllText(templateFilePath, jsonData);
         }
 
+        public static void DeleteTemplate(string name)
+        {
+            foreach (var template in templates)
+            {
+                if (template.Name == name)
+                {
+                    templates.Remove(template);
+                    SaveTemplates();
+                    break;
+                }
+            }
+            CreateFormManager.FillGrid(templates);
+        }
+
         public static void SelectTemplate(string selectedName, string pathQuest, string pathSolution)
         {
             foreach (var template in templates )
@@ -92,12 +116,23 @@ namespace GenHomeWork.Model
                 {
                     foreach (var task in template.Tasks)
                     {
-                        if (task.Type == "TaskOne")
+                        if (task.Type == "Task1")
                         {
-                            var one = (CurrentTaskOne)task;
+                            var one = (CurrentTask1)task;
                             one.GenerateAndSaveTasks();
                         }
+                        else if (task.Type == "Task2")
+                        {
+                            var two = (CurrentTask2)task;
+                            two.GenerateTasksAndSolutions();
+                        }
+                        else if (task.Type == "Task3")
+                        {
+                            var three = (CurrentTask3)task;
+                            three.GenerateTasksAndSolutions();
+                        }
                     }
+                    PrintToFile(pathQuest, "Шаблон " + selectedName);
                 }
             }
         }
@@ -133,6 +168,7 @@ namespace GenHomeWork.Model
             }
 
             AddNewTemplate();
+            SaveTemplates();
             return templates;
         }
 

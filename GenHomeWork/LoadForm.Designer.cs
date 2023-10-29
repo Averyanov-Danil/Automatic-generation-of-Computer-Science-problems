@@ -32,12 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelUp = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridTemplates = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.print = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTemplates)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,21 @@
             this.panelUp.Size = new System.Drawing.Size(716, 41);
             this.panelUp.TabIndex = 0;
             this.panelUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 20;
+            this.btnExit.Location = new System.Drawing.Point(693, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(20, 20);
+            this.btnExit.TabIndex = 12;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel2
             // 
@@ -78,7 +94,8 @@
             this.gridTemplates.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.desc,
-            this.print});
+            this.print,
+            this.delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(104)))), ((int)(((byte)(117)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
@@ -115,7 +132,7 @@
             this.desc.HeaderText = "Описание";
             this.desc.Name = "desc";
             this.desc.ReadOnly = true;
-            this.desc.Width = 440;
+            this.desc.Width = 380;
             // 
             // print
             // 
@@ -124,20 +141,11 @@
             this.print.ReadOnly = true;
             this.print.Width = 70;
             // 
-            // btnExit
+            // delete
             // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 20;
-            this.btnExit.Location = new System.Drawing.Point(693, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(20, 20);
-            this.btnExit.TabIndex = 12;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.delete.HeaderText = "Удалить";
+            this.delete.Name = "delete";
+            this.delete.Width = 70;
             // 
             // LoadForm
             // 
@@ -163,9 +171,10 @@
         private System.Windows.Forms.Panel panelUp;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView gridTemplates;
+        private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc;
         private System.Windows.Forms.DataGridViewButtonColumn print;
-        private FontAwesome.Sharp.IconButton btnExit;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
     }
 }

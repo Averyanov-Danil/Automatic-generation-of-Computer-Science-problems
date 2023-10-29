@@ -13,52 +13,76 @@ namespace GenHomeWork.FormTask
 {
     public partial class TypeOneF : Form
     {
-        private int numSys1 = 0;
-        private int numSys2 = 0;
-        private int start = 0;
-        private int end = 0;
-        private int numSys3 = 0;
-        private int countTask = 0;
+        private int mainInitialNumericSystem;
+        private int mainLastNumericSystem;
+        private int initialNumericSystem;
+        private int initialNumber;
+        private int lastNumber;
+        private int lastNumericSystem;
+        private int countTask;
 
-        public TypeOneF()
+        public CreateForm CreateForm;
+
+        private Random random = new Random();
+
+        public TypeOneF(CreateForm form)
         {
             InitializeComponent();
 
+            CreateForm = form;
+
             rbtnDouble.CheckedChanged += rbtn_SelectedIntOrDouble;
             rbtnInt.CheckedChanged += rbtn_SelectedIntOrDouble;
-            panelDouble.Visible = false;
-            panelInt.Visible = false;
+            panelC1.Visible = false;
+            numDecimalPoints.Visible = false;
+            label4.Visible = false;
+
+            mainInitialNumericSystem = (int)mainInitialNumSystem.Value;
+            mainLastNumericSystem = (int)mainLastNumSystem.Value;
+            initialNumericSystem = (int)initialNumSystem.Value;
+            initialNumber = (int)initialNum.Value;
+            lastNumber = (int)lastNum.Value;
+            lastNumericSystem = (int)lastNumSystem.Value;
+            countTask = (int)nudCount.Value;
+
+            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
         }
 
         #region Оработка смены значения
-        private void nudStart_ValueChanged(object sender, EventArgs e)
+        private void initialNum_ValueChanged(object sender, EventArgs e)
         {
-            start = (int)nudStart.Value;
-            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + start + " до " + end} ) с основанием {numSys1}  в {"От " + numSys2 + " до " + numSys3} систему счисления.";
+            initialNumber = (int)initialNum.Value;
+            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
         }
 
-        private void nudEnd_ValueChanged(object sender, EventArgs e)
+        private void lastNum_ValueChanged_1(object sender, EventArgs e)
         {
-            end = (int)nudEnd.Value;
-            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + start + " до " + end} ) с основанием {numSys1}  в {"От " + numSys2 + " до " + numSys3} систему счисления.";
+            lastNumber = (int)lastNum.Value;
+            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
         }
 
-        private void nudCC1_ValueChanged(object sender, EventArgs e)
+        private void mainInitialNumSystem_ValueChanged(object sender, EventArgs e)
         {
-            numSys1 = (int)numberSys1.Value;
-            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + start + " до " + end} ) с основанием {numSys1}  в {"От " + numSys2 + " до " + numSys3} систему счисления.";
+            mainInitialNumericSystem = (int)mainInitialNumSystem.Value;
+            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
         }
 
         private void nudCC2_ValueChanged(object sender, EventArgs e)
         {
-            numSys2 = (int)numberSys2.Value;
-            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + start + " до " + end} ) с основанием {numSys1}  в {"От " + numSys2 + " до " + numSys3} систему счисления.";
+            initialNumericSystem = (int)initialNumSystem.Value;
+            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
         }
 
         private void numberSys3_ValueChanged(object sender, EventArgs e)
         {
-            numSys3 = (int)numberSys3.Value;
-            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + start + " до " + end} ) с основанием {numSys1}  в {"От " + numSys2 + " до " + numSys3} систему счисления.";
+            lastNumericSystem = (int)lastNumSystem.Value;
+            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
+        }
+
+        private void mainLastNumSystem_ValueChanged(object sender, EventArgs e)
+        {
+            mainLastNumericSystem = (int)mainLastNumSystem.Value;
+            lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
         }
         #endregion
 
@@ -68,14 +92,13 @@ namespace GenHomeWork.FormTask
 
             if (radioButton.Checked && radioButton.Name == "rbtnDouble")
             {
-                panelInt.Visible = false;
-                panelDouble.Visible = true;
-                panelDouble.Location = new Point(panelInt.Location.X, panelInt.Location.Y);
+                numDecimalPoints.Visible = true;
+                label4.Visible = true;
             }
             else if (radioButton.Checked && radioButton.Name == "rbtnInt")
             {
-                panelInt.Visible = true;
-                panelDouble.Visible = false;
+                numDecimalPoints.Visible = false;
+                label4.Visible = false;
             }
         }
 
@@ -83,21 +106,59 @@ namespace GenHomeWork.FormTask
         {
             countTask = (int)nudCount.Value;
 
-            CurrentTaskOne task = new CurrentTaskOne
+            int rbase = random.Next(mainInitialNumericSystem, mainLastNumericSystem);
+
+            if (numDecimalPoints.Value != 0)
             {
-                Type = "TaskOne",
-                
-                numberFrom = start,
-                numberTo = end,
-                countTask = countTask,
-                numberSystemBase = numSys1,
-                numberSysteEnd1 = numSys2,
-                numberSysteEnd2 = numSys3,
-            };
-            TemplateManager.AddTask(task);
+                CurrentTask2 task = new CurrentTask2
+                {
+                    Type = "Task2",
+                    numberFrom = initialNumber,
+                    numberTo = lastNumber,
+                    countTask = countTask,
+                    numberSystemBase = rbase,
+                    numberSysteEnd1 = initialNumericSystem,
+                    numberSysteEnd2 = lastNumericSystem,
+                    numberDecimalPoint = (int)numDecimalPoints.Value,
+                };
+                TemplateManager.AddTask(task);
+            }
+            else
+            {
+                CurrentTask1 task = new CurrentTask1
+                {
+                    Type = "Task1",
+                    numberFrom = initialNumber,
+                    numberTo = lastNumber,
+                    countTask = countTask,
+                    numberSystemBase = rbase,
+                    numberSysteEnd1 = initialNumericSystem,
+                    numberSysteEnd2 = lastNumericSystem,
+                };
+                TemplateManager.AddTask(task);
+            }
 
             MessageBox.Show("Задачи были добавлены.\nПосле добавленя последний задачи, пожалуйста, создайте " +
                 "шаблон!\nНеобходимо указаать его имя(оно должно быть уникальным) и нажать соответствующую кнопку");
+
+            CreateForm.VisabilityCreatePatternElements(CreateForm.lblNamePattern, CreateForm.tbNamePattern, CreateForm.btnCreatePattern);
+        }
+
+        private void rbtnC1_10_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+
+            if (radioButton.Checked && radioButton.Name == "rbtnC1")
+            {
+                panelC1.Visible = true;
+            }
+            else if (radioButton.Checked && radioButton.Name == "rbtnC10")
+            {
+                panelC1.Visible = false;
+                mainLastNumericSystem = 10;
+                mainInitialNumericSystem = 10;
+                lblEndTask.Text = $"Итог:\r\nПеревести ( {"От " + initialNumber + " до " + lastNumber} ) с основанием {"От " + mainInitialNumericSystem + " до " + mainLastNumericSystem}  в {"От " + initialNumericSystem + " до " + lastNumericSystem} систему счисления.";
+            }
         }
     }
 }

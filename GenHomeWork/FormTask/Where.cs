@@ -19,8 +19,8 @@ namespace GenHomeWork.FormTask
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadForm.pathQuest = @textBox1.Text + "tasks.docx";
-            LoadForm.pathSolution = @textBox2.Text + "solution.docx";
+            LoadForm.pathQuest = @textBox1.Text + @"\";
+            LoadForm.pathSolution = @textBox2.Text + @"\";
             this.Close();
         }
     }
