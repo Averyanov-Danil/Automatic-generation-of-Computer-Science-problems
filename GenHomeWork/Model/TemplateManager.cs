@@ -35,7 +35,9 @@ namespace GenHomeWork.Model
         /// <summary>
         /// Храним решение к задачкам
         /// </summary>
-        public static List<string> solution;   
+        public static List<string> solution;
+
+        public static int CounterType = 0;
         
         public static List<Template> Templates { get {  return templates; } }
 
@@ -69,6 +71,7 @@ namespace GenHomeWork.Model
             SaveToFile.SaveToWordFile(filePath + $" {title} Решение.docx", title, solution);
             tasks.Clear();
             solution.Clear();
+            CounterType = 0;
         }
 
         public static Template CreateTemplate(string name)
@@ -130,6 +133,11 @@ namespace GenHomeWork.Model
                         {
                             var three = (CurrentTask3)task;
                             three.GenerateTasksAndSolutions();
+                        }
+                        else if (task.Type == "Task4")
+                        {
+                            var four = (CurrentTask4)task;
+                            four.GenerateTasksAndSolutions();
                         }
                     }
                     PrintToFile(pathQuest, "Шаблон " + selectedName);

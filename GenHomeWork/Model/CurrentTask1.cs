@@ -30,6 +30,7 @@ namespace GenHomeWork.Model
 
             List<string> tasks = new List<string>();
             List<string> solutions = new List<string>();
+            var flag = true;
 
             for (int i = 0; i < countTask; i++)
             {
@@ -42,6 +43,14 @@ namespace GenHomeWork.Model
                     baseTo = random.Next(numberSysteEnd1, numberSysteEnd2 + 1);
                 } while (baseTo == baseFrom);
 
+
+                if (flag)
+                {
+                    tasks.Add($"Тип {TemplateManager.CounterType + 1}");
+                    solutions.Add($"Тип {TemplateManager.CounterType + 1}");
+                    TemplateManager.CounterType++;
+                    flag = false;
+                }
                 // Генерация задачи
                 string taskText = $"{i + 1}. Перевести {number} из {baseFrom}-ой системы счисления в {baseTo}-ую систему счисления.";
                 tasks.Add(taskText);

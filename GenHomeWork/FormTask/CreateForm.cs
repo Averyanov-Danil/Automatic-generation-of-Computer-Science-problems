@@ -61,6 +61,10 @@ namespace GenHomeWork
             {
                 OpenChildForm(new Type3F(this));
             }
+            else if (selectType.SelectedItem.ToString() == "Тип №3")
+            {
+                OpenChildForm(new Type4F(this));
+            }
 
         }
 

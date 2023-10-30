@@ -1,9 +1,6 @@
 ﻿using GenHomeWork.NumberConvert;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GenHomeWork.Model
 {
@@ -27,6 +24,7 @@ namespace GenHomeWork.Model
             List<string> tasks = new List<string>();
             List<string> solutions = new List<string>();
             Random random = new Random();
+            var flag = true;
 
             for (int i = 0; i < countTask; i++)
             {
@@ -54,6 +52,14 @@ namespace GenHomeWork.Model
 
                 string task = $"{i + 1}. Сравните число {convertNum1} в {num1NumericSys} системе счисления, с числом {convertNum2} в {num2NumericSys} системе счисления\n" +
                     $"Используйте знак: >, <, =";
+                
+                if (flag)
+                {
+                    tasks.Add($"Тип {TemplateManager.CounterType + 1}");
+                    solutions.Add($"Тип {TemplateManager.CounterType + 1}");
+                    TemplateManager.CounterType++;
+                    flag = false;
+                }
                 string solution;
                 if (num1 > num2)
                 {

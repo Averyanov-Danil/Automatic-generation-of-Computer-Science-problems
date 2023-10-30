@@ -73,6 +73,12 @@
     <Compile Include="FormTask\Type3F.Designer.cs">
       <DependentUpon>Type3F.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTask\Type4F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTask\Type4F.Designer.cs">
+      <DependentUpon>Type4F.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTask\TypeOneF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,7 @@
     </Compile>
     <Compile Include="Model\CurrentTask3.cs" />
     <Compile Include="Model\CurrentTask2.cs" />
+    <Compile Include="Model\CurrentTask4.cs" />
     <Compile Include="Model\TaskBase.cs" />
     <Compile Include="Model\CurrentTask1.cs" />
     <Compile Include="Model\Template.cs" />
@@ -113,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTask\Type3F.resx">
       <DependentUpon>Type3F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTask\Type4F.resx">
+      <DependentUpon>Type4F.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTask\TypeOneF.resx">
       <DependentUpon>TypeOneF.cs</DependentUpon>

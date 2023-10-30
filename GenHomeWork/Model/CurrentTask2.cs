@@ -22,6 +22,7 @@ namespace GenHomeWork.Model
             List<string> tasks = new List<string>();
             List<string> solutions = new List<string>();
             Random random = new Random();
+            var flag = true;
 
             for (int i = 0; i < countTask; i++)
             {
@@ -37,6 +38,13 @@ namespace GenHomeWork.Model
 
                 string convertedNumber = NumberConverter.ConvertBase(baseFromNumber, numberSystemBase, numericSystem);
 
+                if (flag)
+                {
+                    tasks.Add($"Тип {TemplateManager.CounterType + 1}");
+                    solutions.Add($"Тип {TemplateManager.CounterType + 1}");
+                    TemplateManager.CounterType++;
+                    flag = false;
+                }
                 string task = $"{i + 1}. Перевести число {baseFromNumber} с основанием {numberSystemBase} в {numericSystem} систему счисления.";
                 string solution = $"{task}\n Решение: {convertedNumber}";
 

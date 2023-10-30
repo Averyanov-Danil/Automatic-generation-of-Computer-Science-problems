@@ -486,7 +486,7 @@
             // 
             // nudCount
             // 
-            this.nudCount.Location = new System.Drawing.Point(558, 112);
+            this.nudCount.Location = new System.Drawing.Point(554, 173);
             this.nudCount.Maximum = new decimal(new int[] {
             300,
             0,
@@ -506,7 +506,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(571, 96);
+            this.label14.Location = new System.Drawing.Point(567, 157);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 13);
             this.label14.TabIndex = 29;
@@ -524,7 +524,7 @@
             this.btnAddTask.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddTask.IconSize = 30;
             this.btnAddTask.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddTask.Location = new System.Drawing.Point(560, 145);
+            this.btnAddTask.Location = new System.Drawing.Point(570, 233);
             this.btnAddTask.Name = "btnAddTask";
             this.btnAddTask.Size = new System.Drawing.Size(118, 23);
             this.btnAddTask.TabIndex = 31;
@@ -538,7 +538,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(104)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(684, 239);
+            this.ClientSize = new System.Drawing.Size(700, 278);
             this.Controls.Add(this.btnAddTask);
             this.Controls.Add(this.nudCount);
             this.Controls.Add(this.label14);

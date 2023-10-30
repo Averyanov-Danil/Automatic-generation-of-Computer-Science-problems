@@ -14,7 +14,7 @@ namespace GenHomeWork
             var titleRange = doc.Range();
             titleRange.Text = title;
             titleRange.Font.Size = 14;
-            titleRange.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+            titleRange.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
             titleRange.InsertParagraphAfter();
 
             // Задачи/Решения
