@@ -35,7 +35,9 @@ namespace GenHomeWork
         private void btn_createPattern_Click(object sender, EventArgs e)
         {
            var form = new CreateForm();
-            form.Show();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void btn_loadPattern_Click(object sender, EventArgs e)

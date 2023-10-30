@@ -51,5 +51,15 @@ namespace GenHomeWork.FormTask
 
             form.VisabilityCreatePatternElements(form.lblNamePattern, form.tbNamePattern, form.btnCreatePattern);
         }
+
+        private void nudCount_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnFolderSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -85,13 +86,31 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(386, 127);
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(371, 130);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 23);
+            this.button1.Size = new System.Drawing.Size(65, 20);
             this.button1.TabIndex = 2;
-            this.button1.Text = "ok";
+            this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnFolderSearch
+            // 
+            this.btnFolderSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFolderSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFolderSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFolderSearch.ForeColor = System.Drawing.Color.White;
+            this.btnFolderSearch.Location = new System.Drawing.Point(12, 130);
+            this.btnFolderSearch.Name = "btnFolderSearch";
+            this.btnFolderSearch.Size = new System.Drawing.Size(65, 20);
+            this.btnFolderSearch.TabIndex = 2;
+            this.btnFolderSearch.Text = "Обзор";
+            this.btnFolderSearch.UseVisualStyleBackColor = true;
+            this.btnFolderSearch.Click += new System.EventHandler(this.btnFolderSearch_Click);
             // 
             // Where
             // 
@@ -99,6 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(104)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(448, 162);
+            this.Controls.Add(this.btnFolderSearch);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -122,5 +142,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFolderSearch;
     }
 }

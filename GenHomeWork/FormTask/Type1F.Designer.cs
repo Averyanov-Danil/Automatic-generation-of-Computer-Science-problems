@@ -1,6 +1,6 @@
 ﻿namespace GenHomeWork.FormTask
 {
-    partial class TypeOneF
+    partial class Type1F
     {
         /// <summary>
         /// Required designer variable.

@@ -49,14 +49,14 @@
             // lblDescTask
             // 
             this.lblDescTask.AutoSize = true;
-            this.lblDescTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblDescTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblDescTask.ForeColor = System.Drawing.Color.White;
-            this.lblDescTask.Location = new System.Drawing.Point(51, 25);
+            this.lblDescTask.Location = new System.Drawing.Point(143, 9);
             this.lblDescTask.Name = "lblDescTask";
-            this.lblDescTask.Size = new System.Drawing.Size(595, 26);
+            this.lblDescTask.Size = new System.Drawing.Size(426, 48);
             this.lblDescTask.TabIndex = 5;
-            this.lblDescTask.Text = "Пример:\r\nСколько {значащих нулей \\ единиц} в двоичной записи числа {число} с осно" +
-    "ванием {8 \\ 10 \\ 16}?\r\n";
+            this.lblDescTask.Text = "Пример:\r\nСколько {значащих нулей \\ единиц} в двоичной записи \\\r\nчисла {число} с о" +
+    "снованием {8 \\ 10 \\ 16}?\r\n";
             this.lblDescTask.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnAddTask
@@ -96,6 +96,7 @@
             0,
             0,
             0});
+            this.nudCount.ValueChanged += new System.EventHandler(this.nudCount_ValueChanged);
             // 
             // label14
             // 
@@ -107,32 +108,33 @@
             this.label14.Size = new System.Drawing.Size(85, 13);
             this.label14.TabIndex = 32;
             this.label14.Text = "Кол-во задач";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(54, 154);
+            this.label2.Location = new System.Drawing.Point(47, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.Size = new System.Drawing.Size(30, 16);
             this.label2.TabIndex = 38;
             this.label2.Text = "От:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(161, 154);
+            this.label3.Location = new System.Drawing.Point(175, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 37;
             this.label3.Text = "До:";
             // 
             // lastNum
             // 
-            this.lastNum.Location = new System.Drawing.Point(195, 147);
+            this.lastNum.Location = new System.Drawing.Point(211, 153);
             this.lastNum.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -149,14 +151,14 @@
             // 
             // initialNum
             // 
-            this.initialNum.Location = new System.Drawing.Point(86, 147);
+            this.initialNum.Location = new System.Drawing.Point(83, 153);
             this.initialNum.Maximum = new decimal(new int[] {
             -727379968,
             232,
             0,
             0});
             this.initialNum.Name = "initialNum";
-            this.initialNum.Size = new System.Drawing.Size(65, 20);
+            this.initialNum.Size = new System.Drawing.Size(79, 20);
             this.initialNum.TabIndex = 36;
             this.initialNum.Value = new decimal(new int[] {
             100,
@@ -167,11 +169,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(113, 128);
+            this.label1.Location = new System.Drawing.Point(103, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.Size = new System.Drawing.Size(128, 16);
             this.label1.TabIndex = 39;
             this.label1.Text = "Диапозон числа";
             // 
@@ -180,7 +182,7 @@
             this.rbtnC8.AutoSize = true;
             this.rbtnC8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.rbtnC8.ForeColor = System.Drawing.Color.White;
-            this.rbtnC8.Location = new System.Drawing.Point(327, 105);
+            this.rbtnC8.Location = new System.Drawing.Point(338, 111);
             this.rbtnC8.Name = "rbtnC8";
             this.rbtnC8.Size = new System.Drawing.Size(101, 17);
             this.rbtnC8.TabIndex = 40;
@@ -194,7 +196,7 @@
             this.rbtnC10.Checked = true;
             this.rbtnC10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.rbtnC10.ForeColor = System.Drawing.Color.White;
-            this.rbtnC10.Location = new System.Drawing.Point(327, 128);
+            this.rbtnC10.Location = new System.Drawing.Point(338, 134);
             this.rbtnC10.Name = "rbtnC10";
             this.rbtnC10.Size = new System.Drawing.Size(108, 17);
             this.rbtnC10.TabIndex = 40;
@@ -208,7 +210,7 @@
             this.rbtnC16.AutoSize = true;
             this.rbtnC16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.rbtnC16.ForeColor = System.Drawing.Color.White;
-            this.rbtnC16.Location = new System.Drawing.Point(327, 151);
+            this.rbtnC16.Location = new System.Drawing.Point(338, 157);
             this.rbtnC16.Name = "rbtnC16";
             this.rbtnC16.Size = new System.Drawing.Size(108, 17);
             this.rbtnC16.TabIndex = 40;
@@ -221,7 +223,7 @@
             this.rbtnCRandom.AutoSize = true;
             this.rbtnCRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.rbtnCRandom.ForeColor = System.Drawing.Color.White;
-            this.rbtnCRandom.Location = new System.Drawing.Point(327, 174);
+            this.rbtnCRandom.Location = new System.Drawing.Point(338, 180);
             this.rbtnCRandom.Name = "rbtnCRandom";
             this.rbtnCRandom.Size = new System.Drawing.Size(155, 17);
             this.rbtnCRandom.TabIndex = 40;

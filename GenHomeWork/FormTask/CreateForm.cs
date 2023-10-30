@@ -55,7 +55,7 @@ namespace GenHomeWork
         {
             if (selectType.SelectedItem.ToString() == "Тип №1")
             {
-                OpenChildForm(new TypeOneF(this));
+                OpenChildForm(new Type1F(this));
             }
             else if (selectType.SelectedItem.ToString() == "Тип №2")
             {
@@ -64,6 +64,14 @@ namespace GenHomeWork
             else if (selectType.SelectedItem.ToString() == "Тип №3")
             {
                 OpenChildForm(new Type4F(this));
+            }
+            else if (selectType.SelectedItem.ToString() == "Тип №4")
+            {
+                OpenChildForm(new Type5F(this));
+            }
+            else if (selectType.SelectedItem.ToString() == "Тип №5")
+            {
+                OpenChildForm(new Type6F(this));
             }
 
         }

@@ -139,6 +139,16 @@ namespace GenHomeWork.Model
                             var four = (CurrentTask4)task;
                             four.GenerateTasksAndSolutions();
                         }
+                        else if (task.Type == "Task5")
+                        {
+                            var five = (CurrentTask5)task;
+                            five.GenerateTasksAndSolutions();
+                        }
+                        else if(task.Type == "Task6")
+                        {
+                            var six = (CurrentTask6)task;
+                            six.GenerateTaskAndSolutions();
+                        }
                     }
                     PrintToFile(pathQuest, "Шаблон " + selectedName);
                 }

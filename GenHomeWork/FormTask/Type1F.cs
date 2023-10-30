@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace GenHomeWork.FormTask
 {
-    public partial class TypeOneF : Form
+    public partial class Type1F : Form
     {
         private int mainInitialNumericSystem;
         private int mainLastNumericSystem;
@@ -25,7 +25,7 @@ namespace GenHomeWork.FormTask
 
         private Random random = new Random();
 
-        public TypeOneF(CreateForm form)
+        public Type1F(CreateForm form)
         {
             InitializeComponent();
 
