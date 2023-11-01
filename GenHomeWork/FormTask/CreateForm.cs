@@ -73,6 +73,10 @@ namespace GenHomeWork
             {
                 OpenChildForm(new Type6F(this));
             }
+            else if (selectType.SelectedItem.ToString() == "Тип №6")
+            {
+                OpenChildForm(new Type7F(this));
+            }
 
         }
 

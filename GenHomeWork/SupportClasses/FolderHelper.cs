@@ -10,6 +10,7 @@ namespace GenHomeWork.SupportClasses
     {
         private static string taskPath = Properties.Settings.Default.TaskPath;
         private static string solutionPath = Properties.Settings.Default.TaskPath;
+        private static int countTask = 1;
 
         public static string TaskPath
         {
@@ -31,6 +32,12 @@ namespace GenHomeWork.SupportClasses
                 Properties.Settings.Default.SolutionPath = value;
                 Properties.Settings.Default.Save(); 
             }
+        }
+
+        public static int CountVariable
+        {
+            get { return countTask; }
+            set { countTask = value; }
         }
     }
 }

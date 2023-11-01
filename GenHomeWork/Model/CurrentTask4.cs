@@ -42,8 +42,8 @@ namespace GenHomeWork.Model
                 {
                     if (flag)
                     {
-                        tasks.Add($"Тип {TemplateManager.CounterType + 1}");
-                        solutions.Add($"Тип {TemplateManager.CounterType + 1}");
+                        tasks.Add($"\nТип {TemplateManager.CounterType + 1}");
+                        solutions.Add($"\nТип {TemplateManager.CounterType + 1}");
                         TemplateManager.CounterType++;
                         flag = false;
                     }

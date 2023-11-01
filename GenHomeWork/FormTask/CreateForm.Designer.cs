@@ -83,7 +83,8 @@
             "Тип №2",
             "Тип №3",
             "Тип №4",
-            "Тип №5"});
+            "Тип №5",
+            "Тип №6"});
             this.selectType.Location = new System.Drawing.Point(49, 61);
             this.selectType.Name = "selectType";
             this.selectType.Size = new System.Drawing.Size(155, 21);

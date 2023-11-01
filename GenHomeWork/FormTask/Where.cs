@@ -10,13 +10,12 @@ namespace GenHomeWork.FormTask
         {
             InitializeComponent();
             textBox1.Text = FolderHelper.TaskPath;
-            textBox2.Text = FolderHelper.SolutionPath;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             LoadForm.pathQuest = @textBox1.Text + @"\";
-            LoadForm.pathSolution = @textBox2.Text + @"\";
+            FolderHelper.CountVariable = (int)numericUpDown1.Value;
             this.Close(); 
         }
 
@@ -34,11 +33,11 @@ namespace GenHomeWork.FormTask
                     string selectedDirectory = folderBrowserDialog.SelectedPath;
                     
                     textBox1.Text = @selectedDirectory;
-                    textBox2.Text = @selectedDirectory;
                     FolderHelper.TaskPath = @selectedDirectory;
                     FolderHelper.SolutionPath = @selectedDirectory;
                 }
             }
+           
         }
 
         //private void btnExit_Click(object sender, EventArgs e)

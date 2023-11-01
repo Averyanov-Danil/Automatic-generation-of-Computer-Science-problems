@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace GenHomeWork.FormTask
 {
-    public partial class Type6F : Form
+    public partial class Type7F : Form
     {
-        private int moreOrLess;
         private int numericSystem;
         private int numericSystem2;
-        private Random rand = new Random();
+        private int numericSystem3;
 
         CreateForm CreateForm;
 
-        public Type6F(CreateForm form)
+        public Type7F(CreateForm form)
         {
             InitializeComponent();
+
             CreateForm = form;
         }
 
@@ -68,36 +68,40 @@ namespace GenHomeWork.FormTask
             }
         }
 
-        private void rbtnMoreOrLess_CheckedChanged(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             var rbtn = (RadioButton)sender;
-            if (rbtn.Checked && rbtn.Name == "rbtnMore")
+            if (rbtn.Checked && rbtn.Name == "rbtn3c2")
             {
-                moreOrLess = 1;
+                numericSystem3 = 2;
             }
-            else if (rbtn.Checked && rbtn.Name == "rbtnLess")
+            else if (rbtn.Checked && rbtn.Name == "rbtn3c8")
             {
-                moreOrLess = 2;
+                numericSystem3 = 8;
             }
-            else if (rbtn.Checked && rbtn.Name == "rbtnMoreOrLess")
+            else if (rbtn.Checked && rbtn.Name == "rbtn3c16")
             {
-                moreOrLess = 0;
+                numericSystem3 = 16;
+            }
+            else if (rbtn.Checked && rbtn.Name == "rbtn3cRandom")
+            {
+                numericSystem3 = 0;
             }
         }
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
-            CurrentTask6 task = new CurrentTask6()
+            CurrentTask7 task = new CurrentTask7()
             {
-                Type = "Task6",
-                moreOrLess = moreOrLess,
+                Type = "Task7",
+                initialNumber = (int)initialNum.Value,
+                lastNumber = (int)lastNum.Value,
 
-                initialNum = (int)initialNum.Value,
-                lastNum = (int)lastNum.Value,
-                numericSystem = numericSystem,
+                numericSystem1 = numericSystem,
                 numericSystem2 = numericSystem2,
+                numericSystem3 = numericSystem3,
 
-                countTask = (int)nudCount.Value,
+                countTask = (int)nudCount.Value
             };
 
             TemplateManager.AddTask(task);

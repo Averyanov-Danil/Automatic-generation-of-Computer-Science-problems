@@ -97,6 +97,12 @@
     <Compile Include="FormTask\Type6F.Designer.cs">
       <DependentUpon>Type6F.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTask\Type7F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTask\Type7F.Designer.cs">
+      <DependentUpon>Type7F.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTask\Where.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,7 @@
     <Compile Include="Model\CurrentTask4.cs" />
     <Compile Include="Model\CurrentTask5.cs" />
     <Compile Include="Model\CurrentTask6.cs" />
+    <Compile Include="Model\CurrentTask7.cs" />
     <Compile Include="Model\TaskBase.cs" />
     <Compile Include="Model\CurrentTask1.cs" />
     <Compile Include="Model\Template.cs" />
@@ -147,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTask\Type6F.resx">
       <DependentUpon>Type6F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTask\Type7F.resx">
+      <DependentUpon>Type7F.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTask\Where.resx">
       <DependentUpon>Where.cs</DependentUpon>

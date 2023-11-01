@@ -19,6 +19,26 @@ namespace GenHomeWork.Model
 
         public int countTask;
 
+        private string FixDecimalPoint(string inputString, int decimalPoint)
+        {
+            string[] parts = inputString.Split(',');
+            string integerPart = parts[0];
+            string fractionalPart = parts.Length > 1 ? parts[1] : string.Empty;
+
+            // Форматируем дробную часть с заданным количеством знаков
+            if (fractionalPart.Length > decimalPoint)
+            {
+                fractionalPart = fractionalPart.Substring(0, decimalPoint);
+            }
+            else
+            {
+                fractionalPart = fractionalPart.PadRight(decimalPoint, '0');
+            }
+
+            // Собираем отформатированную строку
+            return integerPart + "." + fractionalPart;
+        }
+
         public void GenerateTasksAndSolutions()
         {
             List<string> tasks = new List<string>();
@@ -34,9 +54,7 @@ namespace GenHomeWork.Model
                 string convertNum1 = NumberConverter.ConvertBase(baseFromNumber1, num1NumericSys, num1NumericSys);
                 if (num1NumDecimalPoints > 0)
                 {
-                    double.TryParse(convertNum1, out double res);
-                    var r = Math.Round(res, num1NumDecimalPoints);
-                    convertNum1 = r.ToString();
+                     convertNum1 = FixDecimalPoint(convertNum1, num1NumDecimalPoints);
                 }
 
                 double num2 = random.Next(num2InitialNumber, num2LastNumber) + random.NextDouble();
@@ -45,9 +63,7 @@ namespace GenHomeWork.Model
                 string convertNum2 = NumberConverter.ConvertBase(baseFromNumber2, num2NumericSys, num2NumericSys);
                 if (num2NumDecimalPoints > 0)
                 {
-                    double.TryParse(convertNum2, out double res);
-                    var r = Math.Round(res, num2NumDecimalPoints);
-                    convertNum2 = r.ToString();
+                    convertNum2 = FixDecimalPoint(convertNum2, num2NumDecimalPoints);
                 }
 
                 string task = $"{i + 1}. Сравните число {convertNum1} в {num1NumericSys} системе счисления, с числом {convertNum2} в {num2NumericSys} системе счисления\n" +
@@ -55,8 +71,8 @@ namespace GenHomeWork.Model
                 
                 if (flag)
                 {
-                    tasks.Add($"Тип {TemplateManager.CounterType + 1}");
-                    solutions.Add($"Тип {TemplateManager.CounterType + 1}");
+                    tasks.Add($"\nТип {TemplateManager.CounterType + 1}");
+                    solutions.Add($"\nТип {TemplateManager.CounterType + 1}");
                     TemplateManager.CounterType++;
                     flag = false;
                 }

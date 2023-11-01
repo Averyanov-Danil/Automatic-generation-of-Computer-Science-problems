@@ -49,11 +49,18 @@
             this.btnAddTask = new FontAwesome.Sharp.IconButton();
             this.nudCount = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rbtn2cRandom = new System.Windows.Forms.RadioButton();
+            this.rbtn2c16 = new System.Windows.Forms.RadioButton();
+            this.rbtn2c8 = new System.Windows.Forms.RadioButton();
+            this.rbtn2c2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.lastNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.initialNum)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDescTask
@@ -140,7 +147,7 @@
             this.panel1.Controls.Add(this.rbtnC16);
             this.panel1.Controls.Add(this.rbtnC8);
             this.panel1.Controls.Add(this.rbtnC2);
-            this.panel1.Location = new System.Drawing.Point(272, 121);
+            this.panel1.Location = new System.Drawing.Point(182, 127);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(162, 95);
             this.panel1.TabIndex = 45;
@@ -202,7 +209,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(276, 103);
+            this.label4.Location = new System.Drawing.Point(186, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 15);
             this.label4.TabIndex = 43;
@@ -213,7 +220,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(99, 109);
+            this.label9.Location = new System.Drawing.Point(71, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 15);
             this.label9.TabIndex = 43;
@@ -224,9 +231,9 @@
             this.panel2.Controls.Add(this.rbtnMoreOrLess);
             this.panel2.Controls.Add(this.rbtnLess);
             this.panel2.Controls.Add(this.rbtnMore);
-            this.panel2.Location = new System.Drawing.Point(37, 127);
+            this.panel2.Location = new System.Drawing.Point(9, 98);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(162, 66);
+            this.panel2.Size = new System.Drawing.Size(162, 72);
             this.panel2.TabIndex = 46;
             // 
             // rbtnMoreOrLess
@@ -291,7 +298,7 @@
             // 
             // nudCount
             // 
-            this.nudCount.Location = new System.Drawing.Point(535, 163);
+            this.nudCount.Location = new System.Drawing.Point(569, 196);
             this.nudCount.Maximum = new decimal(new int[] {
             300,
             0,
@@ -311,11 +318,85 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(548, 147);
+            this.label14.Location = new System.Drawing.Point(582, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 13);
             this.label14.TabIndex = 47;
             this.label14.Text = "Кол-во задач";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(359, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 15);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "с2 - Основание 2";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rbtn2cRandom);
+            this.panel3.Controls.Add(this.rbtn2c16);
+            this.panel3.Controls.Add(this.rbtn2c8);
+            this.panel3.Controls.Add(this.rbtn2c2);
+            this.panel3.Location = new System.Drawing.Point(355, 127);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(162, 95);
+            this.panel3.TabIndex = 45;
+            // 
+            // rbtn2cRandom
+            // 
+            this.rbtn2cRandom.AutoSize = true;
+            this.rbtn2cRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtn2cRandom.ForeColor = System.Drawing.Color.White;
+            this.rbtn2cRandom.Location = new System.Drawing.Point(3, 72);
+            this.rbtn2cRandom.Name = "rbtn2cRandom";
+            this.rbtn2cRandom.Size = new System.Drawing.Size(155, 17);
+            this.rbtn2cRandom.TabIndex = 41;
+            this.rbtn2cRandom.Text = "Основание случайное";
+            this.rbtn2cRandom.UseVisualStyleBackColor = true;
+            this.rbtn2cRandom.CheckedChanged += new System.EventHandler(this.rbtn2cRandom_CheckedChanged);
+            // 
+            // rbtn2c16
+            // 
+            this.rbtn2c16.AutoSize = true;
+            this.rbtn2c16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtn2c16.ForeColor = System.Drawing.Color.White;
+            this.rbtn2c16.Location = new System.Drawing.Point(3, 49);
+            this.rbtn2c16.Name = "rbtn2c16";
+            this.rbtn2c16.Size = new System.Drawing.Size(108, 17);
+            this.rbtn2c16.TabIndex = 42;
+            this.rbtn2c16.Text = "Основание 16";
+            this.rbtn2c16.UseVisualStyleBackColor = true;
+            this.rbtn2c16.CheckedChanged += new System.EventHandler(this.rbtn2cRandom_CheckedChanged);
+            // 
+            // rbtn2c8
+            // 
+            this.rbtn2c8.AutoSize = true;
+            this.rbtn2c8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtn2c8.ForeColor = System.Drawing.Color.White;
+            this.rbtn2c8.Location = new System.Drawing.Point(3, 26);
+            this.rbtn2c8.Name = "rbtn2c8";
+            this.rbtn2c8.Size = new System.Drawing.Size(101, 17);
+            this.rbtn2c8.TabIndex = 43;
+            this.rbtn2c8.Text = "Основание 8";
+            this.rbtn2c8.UseVisualStyleBackColor = true;
+            this.rbtn2c8.CheckedChanged += new System.EventHandler(this.rbtn2cRandom_CheckedChanged);
+            // 
+            // rbtn2c2
+            // 
+            this.rbtn2c2.AutoSize = true;
+            this.rbtn2c2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtn2c2.ForeColor = System.Drawing.Color.White;
+            this.rbtn2c2.Location = new System.Drawing.Point(3, 3);
+            this.rbtn2c2.Name = "rbtn2c2";
+            this.rbtn2c2.Size = new System.Drawing.Size(101, 17);
+            this.rbtn2c2.TabIndex = 44;
+            this.rbtn2c2.Text = "Основание 2";
+            this.rbtn2c2.UseVisualStyleBackColor = true;
+            this.rbtn2c2.CheckedChanged += new System.EventHandler(this.rbtn2cRandom_CheckedChanged);
             // 
             // Type6F
             // 
@@ -327,9 +408,11 @@
             this.Controls.Add(this.nudCount);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -346,6 +429,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,5 +458,11 @@
         private FontAwesome.Sharp.IconButton btnAddTask;
         private System.Windows.Forms.NumericUpDown nudCount;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton rbtn2cRandom;
+        private System.Windows.Forms.RadioButton rbtn2c16;
+        private System.Windows.Forms.RadioButton rbtn2c8;
+        private System.Windows.Forms.RadioButton rbtn2c2;
     }
 }

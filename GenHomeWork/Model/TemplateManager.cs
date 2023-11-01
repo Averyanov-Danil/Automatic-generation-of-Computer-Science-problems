@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Media.TextFormatting;
 
 namespace GenHomeWork.Model
@@ -111,46 +112,104 @@ namespace GenHomeWork.Model
             CreateFormManager.FillGrid(templates);
         }
 
-        public static void SelectTemplate(string selectedName, string pathQuest, string pathSolution)
+        public static void SelectTemplate(string selectedNameAndCount, string pathQuest)
         {
+            var mStr = selectedNameAndCount.Split('|');
+
+            var selectedName = mStr[0];
+            var countTemplate = int.Parse(mStr[1]);
+
             foreach (var template in templates )
             {
                 if (template.Name == selectedName)
                 {
-                    foreach (var task in template.Tasks)
+                    if (countTemplate == 1)
                     {
-                        if (task.Type == "Task1")
+                        foreach (var task in template.Tasks)
                         {
-                            var one = (CurrentTask1)task;
-                            one.GenerateAndSaveTasks();
+                            if (task.Type == "Task1")
+                            {
+                                var one = (CurrentTask1)task;
+                                one.GenerateTaskAndSolutions();
+                            }
+                            else if (task.Type == "Task2")
+                            {
+                                var two = (CurrentTask2)task;
+                                two.GenerateTasksAndSolutions();
+                            }
+                            else if (task.Type == "Task3")
+                            {
+                                var three = (CurrentTask3)task;
+                                three.GenerateTasksAndSolutions();
+                            }
+                            else if (task.Type == "Task4")
+                            {
+                                var four = (CurrentTask4)task;
+                                four.GenerateTasksAndSolutions();
+                            }
+                            else if (task.Type == "Task5")
+                            {
+                                var five = (CurrentTask5)task;
+                                five.GenerateTasksAndSolutions();
+                            }
+                            else if (task.Type == "Task6")
+                            {
+                                var six = (CurrentTask6)task;
+                                six.GenerateTaskAndSolutions();
+                            }
+                            else if (task.Type == "Task7")
+                            {
+                                var seven = (CurrentTask7)task;
+                                seven.GenerateTaskAndSolutions();
+                            }
                         }
-                        else if (task.Type == "Task2")
+                        PrintToFile(pathQuest, "Шаблон " + selectedName);
+                    }
+                    else if (countTemplate > 1) 
+                    {
+                        for (int i = 0; i < countTemplate; i++)
                         {
-                            var two = (CurrentTask2)task;
-                            two.GenerateTasksAndSolutions();
-                        }
-                        else if (task.Type == "Task3")
-                        {
-                            var three = (CurrentTask3)task;
-                            three.GenerateTasksAndSolutions();
-                        }
-                        else if (task.Type == "Task4")
-                        {
-                            var four = (CurrentTask4)task;
-                            four.GenerateTasksAndSolutions();
-                        }
-                        else if (task.Type == "Task5")
-                        {
-                            var five = (CurrentTask5)task;
-                            five.GenerateTasksAndSolutions();
-                        }
-                        else if(task.Type == "Task6")
-                        {
-                            var six = (CurrentTask6)task;
-                            six.GenerateTaskAndSolutions();
+                            foreach (var task in template.Tasks)
+                            {
+                                if (task.Type == "Task1")
+                                {
+                                    var one = (CurrentTask1)task;
+                                    one.GenerateTaskAndSolutions();
+                                }
+                                else if (task.Type == "Task2")
+                                {
+                                    var two = (CurrentTask2)task;
+                                    two.GenerateTasksAndSolutions();
+                                }
+                                else if (task.Type == "Task3")
+                                {
+                                    var three = (CurrentTask3)task;
+                                    three.GenerateTasksAndSolutions();
+                                }
+                                else if (task.Type == "Task4")
+                                {
+                                    var four = (CurrentTask4)task;
+                                    four.GenerateTasksAndSolutions();
+                                }
+                                else if (task.Type == "Task5")
+                                {
+                                    var five = (CurrentTask5)task;
+                                    five.GenerateTasksAndSolutions();
+                                }
+                                else if (task.Type == "Task6")
+                                {
+                                    var six = (CurrentTask6)task;
+                                    six.GenerateTaskAndSolutions();
+                                }
+                                else if (task.Type == "Task7")
+                                {
+                                    var seven = (CurrentTask7)task;
+                                    seven.GenerateTaskAndSolutions();
+                                }
+                            }
+                            PrintToFile(pathQuest, "Шаблон " + selectedName + $" Вар. {i + 1}.");
                         }
                     }
-                    PrintToFile(pathQuest, "Шаблон " + selectedName);
                 }
             }
         }

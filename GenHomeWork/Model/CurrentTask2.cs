@@ -17,6 +17,26 @@ namespace GenHomeWork.Model
         public int countTask;
         public int numberDecimalPoint;
 
+        private string FixDecimalPoint(string inputString, int decimalPoint)
+        {
+            string[] parts = inputString.Split(',');
+            string integerPart = parts[0];
+            string fractionalPart = parts.Length > 1 ? parts[1] : string.Empty;
+
+            // Форматируем дробную часть с заданным количеством знаков
+            if (fractionalPart.Length > decimalPoint)
+            {
+                fractionalPart = fractionalPart.Substring(0, decimalPoint);
+            }
+            else
+            {
+                fractionalPart = fractionalPart.PadRight(decimalPoint, '0');
+            }
+
+            // Собираем отформатированную строку
+            return integerPart + "." + fractionalPart;
+        }
+
         public void GenerateTasksAndSolutions()
         {
             List<string> tasks = new List<string>();
@@ -38,10 +58,15 @@ namespace GenHomeWork.Model
 
                 string convertedNumber = NumberConverter.ConvertBase(baseFromNumber, numberSystemBase, numericSystem);
 
+                if (numberDecimalPoint > 0)
+                {
+                    convertedNumber = FixDecimalPoint(convertedNumber, numberDecimalPoint);
+                }
+
                 if (flag)
                 {
-                    tasks.Add($"Тип {TemplateManager.CounterType + 1}");
-                    solutions.Add($"Тип {TemplateManager.CounterType + 1}");
+                    tasks.Add($"\nТип {TemplateManager.CounterType + 1}");
+                    solutions.Add($"\nТип {TemplateManager.CounterType + 1}");
                     TemplateManager.CounterType++;
                     flag = false;
                 }

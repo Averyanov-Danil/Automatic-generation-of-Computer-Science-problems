@@ -24,7 +24,7 @@ namespace GenHomeWork.Model
         /// </summary>
         /// <param name="savePath"></param>
         /// <param name="solutionsPath"></param>
-        public void GenerateAndSaveTasks()
+        public void GenerateTaskAndSolutions()
         {
             Random random = new Random();
 
@@ -46,8 +46,8 @@ namespace GenHomeWork.Model
 
                 if (flag)
                 {
-                    tasks.Add($"Тип {TemplateManager.CounterType + 1}");
-                    solutions.Add($"Тип {TemplateManager.CounterType + 1}");
+                    tasks.Add($"\nТип {TemplateManager.CounterType + 1}");
+                    solutions.Add($"\nТип {TemplateManager.CounterType + 1}");
                     TemplateManager.CounterType++;
                     flag = false;
                 }

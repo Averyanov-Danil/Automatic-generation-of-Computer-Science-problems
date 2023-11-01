@@ -1,5 +1,6 @@
 ﻿using GenHomeWork.FormTask;
 using GenHomeWork.Model;
+using GenHomeWork.SupportClasses;
 using GenHomeWork.ViewController;
 using Microsoft.Office.Interop.Word;
 using System;
@@ -63,8 +64,10 @@ namespace GenHomeWork
                     string name = row.Cells["name"].Value.ToString();
                     Where where = new Where();
                     where.ShowDialog();
+                    
+                    name += $"|{FolderHelper.CountVariable}";
 
-                    TemplateManager.SelectTemplate(name, pathQuest, pathSolution);
+                    TemplateManager.SelectTemplate(name, pathQuest);
                 }
                 else if (columnName == "delete")
                 {
