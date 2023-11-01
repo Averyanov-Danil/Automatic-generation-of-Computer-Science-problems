@@ -17,6 +17,7 @@
 4. **Задача 4**: Представляет из себя задачу, в которой считается кол-во чисел, находящееся в заданном промежутке. Позволяет выбрать основания двух крайних чисел, а так же их общий диапозон и кол-во данных задач
     ![Четвертая форма](https://github.com/Averyanov-Danil/Automatic-generation-of-Computer-Science-problems/blob/master/images/GenHomeWork_Aje3ysaCkG.png)
 5. **Задача 5**: Представляет из себя задачу, которая генерирует 5 чисел, 4 из которых сравниваются в последним по типу больше или меньше и выводит их верное кол-во. Позволяет задать знак сравнения, диапозон числа, а так же основания первых 4 и последнего числа
+
     ![Пятая форма](https://github.com/Averyanov-Danil/Automatic-generation-of-Computer-Science-problems/blob/master/images/GenHomeWork_YuQGxqzC2v.png)
 6. **Задача 6**: Задача аналогичная предидущей, только в данном случае необходимо указать два числа. Программа будет считать кол-во чисел, которые находятся между ними.
    ![Шестая форма](https://github.com/Averyanov-Danil/Automatic-generation-of-Computer-Science-problems/blob/master/images/GenHomeWork_t3ERu5L6Oe.png)
