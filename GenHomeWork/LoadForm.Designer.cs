@@ -39,12 +39,14 @@
             this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.print = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTemplates)).BeginInit();
             this.SuspendLayout();
             // 
             // panelUp
             // 
+            this.panelUp.Controls.Add(this.label1);
             this.panelUp.Controls.Add(this.btnExit);
             this.panelUp.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUp.Location = new System.Drawing.Point(0, 0);
@@ -147,6 +149,17 @@
             this.delete.Name = "delete";
             this.delete.Width = 70;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(278, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 24);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Печать шаблона";
+            // 
             // LoadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +174,7 @@
             this.Text = "LoadForm";
             this.Load += new System.EventHandler(this.LoadForm_Load);
             this.panelUp.ResumeLayout(false);
+            this.panelUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTemplates)).EndInit();
             this.ResumeLayout(false);
 
@@ -176,5 +190,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desc;
         private System.Windows.Forms.DataGridViewButtonColumn print;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.Label label1;
     }
 }

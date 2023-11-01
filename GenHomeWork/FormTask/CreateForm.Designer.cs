@@ -37,17 +37,19 @@
             this.lblNamePattern = new System.Windows.Forms.Label();
             this.tbNamePattern = new System.Windows.Forms.TextBox();
             this.btnCreatePattern = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelUp.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelUp
             // 
             this.panelUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(104)))), ((int)(((byte)(117)))));
+            this.panelUp.Controls.Add(this.label2);
             this.panelUp.Controls.Add(this.btnExit);
             this.panelUp.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUp.Location = new System.Drawing.Point(0, 0);
             this.panelUp.Name = "panelUp";
-            this.panelUp.Size = new System.Drawing.Size(724, 29);
+            this.panelUp.Size = new System.Drawing.Size(724, 41);
             this.panelUp.TabIndex = 0;
             this.panelUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
             // 
@@ -70,7 +72,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(131)))), ((int)(((byte)(141)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 29);
+            this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(724, 5);
             this.panel1.TabIndex = 1;
@@ -85,7 +87,7 @@
             "Тип №4",
             "Тип №5",
             "Тип №6"});
-            this.selectType.Location = new System.Drawing.Point(49, 61);
+            this.selectType.Location = new System.Drawing.Point(37, 74);
             this.selectType.Name = "selectType";
             this.selectType.Size = new System.Drawing.Size(155, 21);
             this.selectType.TabIndex = 2;
@@ -96,7 +98,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(46, 45);
+            this.label1.Location = new System.Drawing.Point(34, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 3;
@@ -114,7 +116,7 @@
             this.lblNamePattern.AutoSize = true;
             this.lblNamePattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNamePattern.ForeColor = System.Drawing.Color.White;
-            this.lblNamePattern.Location = new System.Drawing.Point(516, 45);
+            this.lblNamePattern.Location = new System.Drawing.Point(515, 57);
             this.lblNamePattern.Name = "lblNamePattern";
             this.lblNamePattern.Size = new System.Drawing.Size(112, 13);
             this.lblNamePattern.TabIndex = 3;
@@ -122,7 +124,7 @@
             // 
             // tbNamePattern
             // 
-            this.tbNamePattern.Location = new System.Drawing.Point(519, 62);
+            this.tbNamePattern.Location = new System.Drawing.Point(518, 74);
             this.tbNamePattern.Name = "tbNamePattern";
             this.tbNamePattern.Size = new System.Drawing.Size(149, 20);
             this.tbNamePattern.TabIndex = 5;
@@ -139,13 +141,24 @@
             this.btnCreatePattern.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCreatePattern.IconSize = 30;
             this.btnCreatePattern.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreatePattern.Location = new System.Drawing.Point(677, 62);
+            this.btnCreatePattern.Location = new System.Drawing.Point(676, 74);
             this.btnCreatePattern.Name = "btnCreatePattern";
             this.btnCreatePattern.Size = new System.Drawing.Size(35, 23);
             this.btnCreatePattern.TabIndex = 9;
             this.btnCreatePattern.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreatePattern.UseVisualStyleBackColor = true;
             this.btnCreatePattern.Click += new System.EventHandler(this.btnCreatePattern_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(279, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 24);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Создание шаблона";
             // 
             // CreateForm
             // 
@@ -166,6 +179,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CreateForm";
             this.panelUp.ResumeLayout(false);
+            this.panelUp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +196,6 @@
         public System.Windows.Forms.Label lblNamePattern;
         public System.Windows.Forms.TextBox tbNamePattern;
         public FontAwesome.Sharp.IconButton btnCreatePattern;
+        private System.Windows.Forms.Label label2;
     }
 }
