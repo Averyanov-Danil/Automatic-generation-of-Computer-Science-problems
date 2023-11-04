@@ -64,7 +64,7 @@
 
 ## Лицензия
 
-Этот репозиторий распространяется под лицензией [Лицензии MIT](https://github.com/Averyanov-Danil/Automatic-generation-of-Computer-Science-problems/blob/master/GenHomeWork/License.txt). Пожалуйста, ознакомьтесь с лицензией перед использованием материалов из этого репозитория.
+Этот репозиторий распространяется под лицензией [Лицензии MIT](https://github.com/Averyanov-Danil/Automatic-generation-of-Computer-Science-problems/blob/master/LICENSE). Пожалуйста, ознакомьтесь с лицензией перед использованием материалов из этого репозитория.
 
 Если у вас есть вопросы или предложения, не стесняйтесь связаться с нами.
 
